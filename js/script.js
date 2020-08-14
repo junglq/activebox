@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
 
     // Fixed Header
     let header = $("#header");
@@ -8,7 +8,7 @@ $(function() {
 
     checkscroll(scrollPos, introH);
 
-    $(window).on("scroll resize", function() {
+    $(window).on("scroll resize", function () {
         introH = intro.innerHeight();
         scrollPos = $(this).scrollTop();
         checkscroll(scrollPos, introH);
@@ -23,7 +23,7 @@ $(function() {
     }
 
     // Smooth scroll
-    $("[data-scroll]").on("click", function(event) {
+    $("[data-scroll]").on("click", function (event) {
         event.preventDefault();
 
         let elementId = $(this).data("scroll");
@@ -32,7 +32,7 @@ $(function() {
         nav.removeClass("show");
 
         $("html,body").animate({
-            scrollTop: elementOffset - 50
+            scrollTop: elementOffset - 57
         }, 1000)
 
     });
@@ -41,9 +41,10 @@ $(function() {
     let nav = $("#nav");
     let navToggle = $("#navToggle");
 
-    navToggle.on("click", function(event) {
+    navToggle.on("click", function (event) {
         event.preventDefault()
         nav.toggleClass("show");
+        $(this).toggleClass('active')
     })
 
 
